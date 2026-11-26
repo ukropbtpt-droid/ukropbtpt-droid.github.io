@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Политика конфиденциальности и обработки ПДн 2026 для сайта ИП и ООО</title>
+  <meta name="description" content="Готовая актуальная Политика обработки персональных данных 2026 под реквизиты вашего ИП, ООО или самозанятого с учётом локализации баз в РФ." />
+  <link rel="canonical" href="https://ukropbtpt-droid.github.io/152-fz/check/politika-konfidencialnosti-2026-generator.html" />
+  <meta name="google-site-verification" content="RZ6hFDiKfH72Eg-RqmMP9mfZ6xQA1unE2m2Kejh_C-Q" />
+  <meta name="yandex-verification" content="5ca0b54a47e1d7e3" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Штрафуют ли, если ссылки на Политику нет на сайте?", "acceptedAnswer": {"@type": "Answer", "text": "Да, за неопубликование политики предусмотрен отдельный состав по ч. 3 ст. 13.11 КоАП со штрафом до 60 000 ₽ для компаний."}}, {"@type": "Question", "name": "Можно ли использовать один документ на ИП и самозанятого?", "acceptedAnswer": {"@type": "Answer", "text": "Оба субъекта указывают свои точные реквизиты (ФИО/наименование, ИНН и email для отзывов ПДн) — наш генератор подставляет их автоматически."}}]}</script>
+  <style>
+    :root {
+      --bg: #070b14;
+      --panel: #0f172a;
+      --card: #131c2e;
+      --border: #25334d;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --blue: #38bdf8;
+      --green: #10b981;
+      --red: #fb7185;
+      --amber: #fbbf24;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.55;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 1020px; margin: 0 auto; padding: 28px 18px 64px; }
+    .topbar {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      gap: 12px; margin-bottom: 26px; padding-bottom: 14px; border-bottom: 1px solid var(--border);
+    }
+    .logo { font-weight: 800; font-size: 17px; color: #fff; }
+    .pill {
+      display: inline-block; padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 700;
+      background: rgba(56, 189, 248, 0.14); color: var(--blue); border: 1px solid rgba(56, 189, 248, 0.35);
+    }
+    h1 { font-size: clamp(26px, 4vw, 40px); line-height: 1.18; margin: 0 0 12px; color: #fff; }
+    .lead { color: #cbd5e1; font-size: 17px; margin: 0 0 24px; max-width: 820px; }
+    .scan-box {
+      background: linear-gradient(135deg, #111b2e, #0f172a);
+      border: 1px solid #2b3d5c; border-radius: 18px; padding: 22px;
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.4);
+    }
+    .scan-form { display: flex; flex-wrap: wrap; gap: 10px; }
+    .scan-input {
+      flex: 1 1 300px; background: #080e1a; border: 1px solid #334155; color: #fff;
+      border-radius: 11px; padding: 14px 16px; font-size: 16px; outline: none;
+    }
+    .scan-input:focus { border-color: var(--blue); }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      border: 0; border-radius: 11px; padding: 14px 22px; font-size: 15px; font-weight: 800;
+      cursor: pointer; text-decoration: none;
+    }
+    .btn-primary { background: var(--blue); color: #082f49; }
+    .btn-green { background: var(--green); color: #022c22; }
+    .btn-amber { background: var(--amber); color: #1f1300; }
+    .btn-outline { background: transparent; color: #e2e8f0; border: 1px solid #3b4b68; }
+    .btn:disabled { opacity: 0.55; cursor: wait; }
+    .hint-row { margin-top: 10px; font-size: 13px; color: var(--muted); }
+    .status-msg { margin-top: 14px; font-size: 14px; font-weight: 600; color: #cbd5e1; }
+    .err-msg { color: var(--red); }
+    #scan-result { display: none; margin-top: 26px; }
+    .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-bottom: 18px; }
+    .metric {
+      background: var(--card); border: 1px solid var(--border); border-radius: 13px; padding: 15px;
+    }
+    .metric-label { font-size: 12px; color: var(--muted); text-transform: uppercase; font-weight: 700; margin-bottom: 6px; }
+    .metric-val { font-size: 20px; font-weight: 800; color: #fff; }
+    .risk-high { color: var(--red); }
+    .risk-med { color: var(--amber); }
+    .risk-low { color: var(--green); }
+    .issue-card {
+      background: var(--card); border: 1px solid var(--border); border-left: 4px solid var(--red);
+      border-radius: 12px; padding: 16px; margin-bottom: 12px;
+    }
+    .issue-card.sev-medium { border-left-color: var(--amber); }
+    .issue-card.sev-low { border-left-color: var(--blue); }
+    .issue-head { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+    .issue-title { font-weight: 800; font-size: 16px; color: #fff; }
+    .issue-law { font-size: 12px; font-weight: 700; color: #bae6fd; background: rgba(56,189,248,0.12); padding: 3px 9px; border-radius: 999px; }
+    .issue-detail { font-size: 14px; color: #cbd5e1; margin-bottom: 6px; }
+    .issue-ev { font-size: 12px; color: #94a3b8; background: #09101d; padding: 8px 10px; border-radius: 8px; word-break: break-word; }
+    .issue-fix { font-size: 13px; color: #6ee7b7; margin-top: 8px; font-weight: 600; }
+    .offers { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 18px; margin-top: 24px; }
+    .offer-card {
+      background: #101a2d; border: 1px solid #2b4263; border-radius: 16px; padding: 22px;
+      display: flex; flex-direction: column; justify-content: space-between; gap: 14px;
+    }
+    .offer-card h3 { margin: 0 0 6px; font-size: 20px; color: #fff; }
+    .price-tag { font-size: 26px; font-weight: 900; color: #6ee7b7; margin-bottom: 6px; }
+    .field { margin-bottom: 10px; }
+    .field label { display: block; font-size: 12px; font-weight: 700; color: #cbd5e1; margin-bottom: 4px; }
+    .field input, .field textarea {
+      width: 100%; background: #080e1a; border: 1px solid #334155; color: #fff;
+      border-radius: 9px; padding: 10px 12px; font-size: 14px; font-family: inherit;
+    }
+    .consent-row { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; color: #cbd5e1; margin: 10px 0 12px; }
+    .consent-row input { margin-top: 3px; flex: 0 0 auto; }
+    .article { margin-top: 38px; background: var(--panel); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
+    .article h2 { margin-top: 0; font-size: 22px; color: #fff; }
+    .faq-item { border-top: 1px solid var(--border); padding: 14px 0; }
+    .faq-item:first-child { border-top: 0; padding-top: 0; }
+    .seo-links { margin-top: 34px; background: var(--panel); border: 1px solid var(--border); border-radius: 16px; padding: 22px; }
+    .seo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; margin-top: 12px; font-size: 14px; }
+    footer {
+      margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border);
+      font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between;
+    }
+    </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a class="logo" href="/152-fz/">Авто-лекарь 152-ФЗ • 152-ФЗ и 168-ФЗ</a>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+      <span class="pill">Без Google Fonts и скрытых трекеров</span>
+      <a class="btn btn-outline" style="padding:6px 12px;font-size:12px;" href="/">← Все сервисы</a>
+    </div>
+  </div>
+  
+<p style="margin:0 0 10px;"><a href="/152-fz/">← Все проверки на главной</a></p>
+<h1>Политика обработки персональных данных 2026 для сайта</h1>
+<p class="lead">Скачанный из старого блога шаблон часто не учитывает требования локализации баз в РФ, актуальные формулировки cookie и ваш реальный ИНН.</p>
+
+<div class="scan-box">
+  <form id="scan-form" class="scan-form" role="search" onsubmit="return runScan152(event)">
+    <input id="scan-url" name="q" class="scan-input" type="text" placeholder="Введите адрес вашего сайта, например: https://site.ru" required />
+    <button id="scan-btn" class="btn btn-primary" type="submit">Проверить сайт бесплатно</button>
+  </form>
+  <div class="hint-row">Проверка занимает 5–15 секунд: анализируем HTML, CSS, шрифты Google Fonts, скрипты Яндекс.Метрики, формы заявок и англицизмы по 168-ФЗ.</div>
+  <div id="scan-status" class="status-msg"></div>
+</div>
+
+<div id="scan-result">
+  <div class="summary-grid" id="summary-grid"></div>
+  <div id="fine-banner" style="background:rgba(251,113,133,0.12);border:1px solid rgba(251,113,133,0.35);border-radius:12px;padding:14px 16px;margin-bottom:18px;font-weight:700;color:#fecdd3;"></div>
+  <div id="issues-list"></div>
+
+  <div class="offers">
+    <div class="offer-card" style="border-color:#10b981;">
+      <div>
+        <span class="pill" style="background:rgba(16,185,129,0.16);color:#6ee7b7;border-color:rgba(16,185,129,0.4);">Моментальная автосборка под ваш сайт</span>
+        <h3 style="margin-top:10px;">Готовый архив исправлений для этого домена</h3>
+        <div class="price-tag">1 490 ₽</div>
+        <p style="font-size:14px;color:#cbd5e1;margin:0 0 12px;">
+          Робот сформирует единый ZIP-архив конкретно под ваш сайт и платформу:
+        </p>
+        <ul style="margin:0;padding-left:18px;font-size:13px;color:#e2e8f0;">
+          <li>Локальные файлы шрифтов <b>.woff2 + local-fonts.css</b> (без Google Fonts);</li>
+          <li>Скрипт <b>cookie-guard-152fz.js</b> уже с вашим номером Метрики;</li>
+          <li>5 документов 2026 года под ваш ИНН (Политика, Согласие, Cookie, Приказ, Шпаргалка для РКН);</li>
+          <li>Таблица русских замен по 168-ФЗ и пошаговая инструкция под вашу платформу.</li>
+        </ul>
+      </div>
+      <form onsubmit="return createPatchOrder(event)">
+        <div class="field"><label>Наименование ИП / ООО / ФИО (необязательно сейчас)</label><input id="p-org" type="text" placeholder="Например: ИП Иванов И.И." /></div>
+        <div class="field"><label>ИНН (подставим в документы 152-ФЗ)</label><input id="p-inn" type="text" placeholder="10 или 12 цифр" /></div>
+        <div class="field"><label>Электронная почта для чека и резервной отправки</label><input id="p-email" type="email" placeholder="info@vash-site.ru" required /></div>
+        <label class="consent-row">
+          <input id="p-consent" type="checkbox" required />
+          <span>Я даю согласие на обработку персональных данных и ознакомлен с <a href="/152-fz/privacy.html" target="_blank">Политикой обработки ПДн</a>.</span>
+        </label>
+        <button id="p-btn" class="btn btn-green" type="submit" style="width:100%;">Получить готовый архив — 1 490 ₽</button>
+        <div id="p-msg" class="status-msg"></div>
+      </form>
+    </div>
+
+    <div class="offer-card" style="border-color:#38bdf8;">
+      <div>
+        <span class="pill">Для тех, кто не хочет лезть в код</span>
+        <h3 style="margin-top:10px;">Установка и настройка «под ключ» на ваш сайт</h3>
+        <div class="price-tag" style="color:#7dd3fc;">4 900 ₽</div>
+        <p style="font-size:14px;color:#cbd5e1;margin:0 0 12px;">
+          Развернём архив на вашем сайте (Tilda, WordPress, Битрикс, HTML), уберём внешние шрифты, подключим задержку Метрики до согласия и настроим формы с отчётом «до / после».
+        </p>
+        <ul style="margin:0;padding-left:18px;font-size:13px;color:#e2e8f0;">
+          <li>Работа с ИП, ООО и физлицами с официальным чеком НПД;</li>
+          <li>Повторный контрольный скан без красных ошибок.</li>
+        </ul>
+      </div>
+      <form onsubmit="return createTurnkeyOrder(event)">
+        <div class="field"><label>Куда вам ответить (телефон, Telegram или почта)</label><input id="t-contact" type="text" placeholder="@nik_telegram или +7 900 000-00-00" required /></div>
+        <div class="field"><label>ИП / ООО и комментарий (по желанию)</label><input id="t-comment" type="text" placeholder="Например: сайт на Тильде, нужно под ключ" /></div>
+        <label class="consent-row">
+          <input id="t-consent" type="checkbox" required />
+          <span>Я даю согласие на обработку персональных данных и ознакомлен с <a href="/152-fz/privacy.html" target="_blank">Политикой обработки ПДн</a>.</span>
+        </label>
+        <button id="t-btn" class="btn btn-primary" type="submit" style="width:100%;">Заказать настройку под ключ — 4 900 ₽</button>
+        <div id="t-msg" class="status-msg"></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="article">
+  <h2>Подробный разбор проблемы</h2>
+  <p>Наличие рабочей ссылки на актуальную Политику в подвале сайта и рядом с формами ввода данных — базовое требование ч. 2 ст. 18.1 152-ФЗ.</p><p>В составе готового ZIP-пакета сервис формирует персонализированную HTML-страницу Политики под ваш домен, ИНН и список счётчиков аналитики.</p>
+  <h2 style="margin-top:26px;">Частые вопросы</h2>
+  <div class="faq-item"><b>Штрафуют ли, если ссылки на Политику нет на сайте?</b><p style="margin:6px 0 0;color:#cbd5e1;">Да, за неопубликование политики предусмотрен отдельный состав по ч. 3 ст. 13.11 КоАП со штрафом до 60 000 ₽ для компаний.</p></div><div class="faq-item"><b>Можно ли использовать один документ на ИП и самозанятого?</b><p style="margin:6px 0 0;color:#cbd5e1;">Оба субъекта указывают свои точные реквизиты (ФИО/наименование, ИНН и email для отзывов ПДн) — наш генератор подставляет их автоматически.</p></div>
+</div>
+
+  <div class="seo-links">
+    <b style="color:#fff;">База проверок и решений по требованиям 152-ФЗ и 168-ФЗ:</b>
+    <div class="seo-grid"><a href="/152-fz/check/google-fonts-152-fz.html">Проверка сайта на Google Fonts по 152-ФЗ</a><a href="/152-fz/check/yandex-metrika-cookie-152-fz.html">Блокировка Яндекс.Метрики до согласия на Cookie</a><a href="/152-fz/check/tilda-152-fz-shrifty-cookie.html">Проверка сайта на Tilda под требования 152-ФЗ и 168-ФЗ</a><a href="/152-fz/check/wordpress-152-fz-proverka.html">Автоматический аудит WordPress по 152-ФЗ</a><a href="/152-fz/check/bitrix-152-fz-audit.html">Проверка интернет-магазина на 1С-Битрикс (152-ФЗ + 168-ФЗ)</a><a href="/152-fz/check/proverka-saita-na-168-fz-anglicizmy.html">Онлайн-проверка сайта на англицизмы по 168-ФЗ</a><a href="/152-fz/check/chem-zamenit-google-recaptcha-152-fz.html">Google reCAPTCHA на сайте: риски по 152-ФЗ и замена</a><a href="/152-fz/check/politika-konfidencialnosti-2026-generator.html">Политика обработки персональных данных 2026 для сайта</a><a href="/152-fz/check/soglasie-na-obrabotku-pdn-checkbox.html">Правильный чекбокс согласия в формах сайта по 152-ФЗ</a><a href="/152-fz/check/uvedomlenie-v-roskomnadzor-ip-samozanyatyi.html">Уведомление в Роскомнадзор (pd.rkn.gov.ru) для владельца сайта</a><a href="/152-fz/check/youtube-google-maps-na-saite-152-fz.html">YouTube и Google Карты на сайте: скрытая передача данных по 152-ФЗ</a><a href="/152-fz/check/shtrafy-roskomnadzora-za-sait-2026.html">Штрафы за нарушения на сайте (152-ФЗ и 168-ФЗ) в 2026 году</a></div>
+  </div>
+  <footer>
+    <div>Самозанятый Сикорский Р. В. (НПД, ИНН 250211090890, г. Владивосток)</div>
+    <div>
+      <a href="/152-fz/">Главная и сканер</a> •
+      <a href="/152-fz/privacy.html">Политика обработки персональных данных</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+var API_BASE = "https://fz152-doc.duckdns.org";
+window._currentScanId = "";
+
+function esc152(str) {
+  return String(str || "").replace(/[&<>"']/g, function (c) {
+    return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];
+  });
+}
+
+async function runScan152(ev) {
+  ev.preventDefault();
+  var urlInput = document.getElementById("scan-url");
+  var btn = document.getElementById("scan-btn");
+  var st = document.getElementById("scan-status");
+  var resWrap = document.getElementById("scan-result");
+
+  var raw = (urlInput.value || "").trim();
+  if (!raw) return false;
+
+  btn.disabled = true;
+  st.className = "status-msg";
+  st.textContent = "Проверяем сайт, таблицы стилей, счётчики и формы (5–15 секунд)...";
+  resWrap.style.display = "none";
+
+  try {
+    var resp = await fetch(API_BASE + "/api/scan", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({url: raw})
+    });
+    var data = await resp.json();
+    if (!resp.ok) {
+      st.className = "status-msg err-msg";
+      st.textContent = data.detail || "Не удалось проверить указанный адрес.";
+      return false;
+    }
+    window._currentScanId = data.scan_id;
+    renderScanReport(data.report);
+    st.textContent = "Готово! Отчёт ниже сформирован в реальном времени по коду вашего сайта.";
+    resWrap.style.display = "block";
+    resWrap.scrollIntoView({behavior: "smooth", block: "start"});
+  } catch (e) {
+    st.className = "status-msg err-msg";
+    st.textContent = "Сбой соединения с сервером проверки. Попробуйте повторить через минуту.";
+  } finally {
+    btn.disabled = false;
+  }
+  return false;
+}
+
+function renderScanReport(r) {
+  var riskCls = r.risk_score >= 55 ? "risk-high" : (r.risk_score >= 20 ? "risk-med" : "risk-low");
+  var metrikaTxt = (r.metrika_ids && r.metrika_ids.length) ? ("№ " + r.metrika_ids.join(", ")) : "Не найден";
+  var fontsTxt = (r.font_families && r.font_families.length) ? r.font_families.join(", ") : ((r.google_font_urls && r.google_font_urls.length) ? "Есть внешние" : "Не найдены");
+
+  document.getElementById("summary-grid").innerHTML =
+    '<div class="metric"><div class="metric-label">Уровень риска</div><div class="metric-val ' + riskCls + '">' + esc152(r.risk_score) + '/100 • ' + esc152(r.risk_level) + '</div></div>' +
+    '<div class="metric"><div class="metric-label">Платформа сайта</div><div class="metric-val">' + esc152(r.cms) + '</div></div>' +
+    '<div class="metric"><div class="metric-label">Яндекс.Метрика</div><div class="metric-val">' + esc152(metrikaTxt) + '</div></div>' +
+    '<div class="metric"><div class="metric-label">Шрифты Google</div><div class="metric-val">' + esc152(fontsTxt) + '</div></div>';
+
+  document.getElementById("fine-banner").textContent = "Оценка последствий: " + (r.fine_summary || "");
+
+  var listEl = document.getElementById("issues-list");
+  if (!r.issues || !r.issues.length) {
+    listEl.innerHTML = '<div class="issue-card sev-low"><div class="issue-title">На главной странице явных критических ошибок не обнаружено!</div><div class="issue-detail">Вы всё равно можете забрать комплект документов 152-ФЗ и шпаргалку уведомления в РКН.</div></div>';
+    return;
+  }
+  listEl.innerHTML = r.issues.map(function (it) {
+    return '<div class="issue-card sev-' + esc152(it.severity) + '">' +
+      '<div class="issue-head"><div class="issue-title">' + esc152(it.title) + '</div><span class="issue-law">' + esc152(it.law) + '</span></div>' +
+      '<div class="issue-detail">' + esc152(it.detail) + '</div>' +
+      '<div class="issue-ev">Улика на сайте: ' + esc152(it.evidence) + '</div>' +
+      '<div class="issue-fix">Решение в архиве: ' + esc152(it.fix_summary) + '</div>' +
+      '</div>';
+  }).join("");
+}
+
+async function createPatchOrder(ev) {
+  ev.preventDefault();
+  if (!window._currentScanId) {
+    alert("Сначала проверьте адрес сайта выше.");
+    return false;
+  }
+  var btn = document.getElementById("p-btn");
+  var msg = document.getElementById("p-msg");
+  btn.disabled = true;
+  msg.className = "status-msg";
+  msg.textContent = "Готовим заказ и переходим к оплате...";
+  try {
+    var resp = await fetch(API_BASE + "/api/orders/patch", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({
+        scan_id: window._currentScanId,
+        org_name: document.getElementById("p-org").value,
+        inn: document.getElementById("p-inn").value,
+        email: document.getElementById("p-email").value,
+        consent: document.getElementById("p-consent").checked
+      })
+    });
+    var data = await resp.json();
+    if (!resp.ok) {
+      msg.className = "status-msg err-msg";
+      msg.textContent = data.detail || "Ошибка оформления заказа.";
+      return false;
+    }
+    if (data.confirmation_url) {
+      window.location.href = data.confirmation_url;
+      return false;
+    }
+    var fullOrderUrl = (data.order_url && data.order_url.indexOf("http") === 0) ? data.order_url : (API_BASE + (data.order_url || ""));
+    msg.innerHTML = esc152(data.message || "Заявка принята.") + ' <a href="' + esc152(fullOrderUrl) + '"' + (API_BASE ? ' target="_blank" rel="noopener"' : '') + '>Открыть страницу заказа</a>';
+  } catch (e) {
+    msg.className = "status-msg err-msg";
+    msg.textContent = "Ошибка сети при создании заказа.";
+  } finally {
+    btn.disabled = false;
+  }
+  return false;
+}
+
+async function createTurnkeyOrder(ev) {
+  ev.preventDefault();
+  var btn = document.getElementById("t-btn");
+  var msg = document.getElementById("t-msg");
+  btn.disabled = true;
+  msg.className = "status-msg";
+  msg.textContent = "Отправляем заявку...";
+  try {
+    var resp = await fetch(API_BASE + "/api/orders/turnkey", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({
+        scan_id: window._currentScanId || "",
+        contact: document.getElementById("t-contact").value,
+        comment: document.getElementById("t-comment").value,
+        consent: document.getElementById("t-consent").checked
+      })
+    });
+    var data = await resp.json();
+    if (!resp.ok) {
+      msg.className = "status-msg err-msg";
+      msg.textContent = data.detail || "Не удалось отправить заявку.";
+      return false;
+    }
+    msg.style.color = "#6ee7b7";
+    msg.textContent = data.message || "Заявка принята!";
+  } catch (e) {
+    msg.className = "status-msg err-msg";
+    msg.textContent = "Ошибка отправки заявки.";
+  } finally {
+    btn.disabled = false;
+  }
+  return false;
+}
+</script>
+
+</body>
+</html>

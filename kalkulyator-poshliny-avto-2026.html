@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Калькулятор растаможки авто 2026 во Владивостоке: пошлина ЕАЭС и утильсбор (Япония, Корея, Китай)</title>
+  <meta name="description" content="Экспресс-калькулятор пошлины ЕАЭС и утильсбора 2026 года на ввоз авто из Японии, Кореи и Китая. Авторасчёт под ключ по ссылке с CarSensor, Encar, Che168 и Drom в Telegram." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Какой утильсбор на авто в 2026 году для физлиц (до 160 л.с. и выше)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Льготный утилизационный сбор для личного пользования (3 400 руб. за авто до 3 лет и 5 200 руб. за авто старше 3 лет) действует при объёме двигателя до 3 000 см3 и мощности до 160 л.с. (для электромобилей и последовательных гибридов — 30-мин. мощность до 80 л.с.). При превышении этих порогов начисляется полный коммерческий утильсбор."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Как рассчитать авто напрямую по ссылке с Encar, CarSensor или Che168?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Скопируйте ссылку на объявление с CarSensor, Goo-net, Encar, Che168, Dongchedi или Drom и отправьте её в Telegram-бот @auto_poshlina_calc_bot. Бот автоматически определит объём, мощность, год и цену и сформирует смету PNG/PDF по текущему курсу ЦБ РФ."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    body { margin: 0; background: #070d19; color: #f1f5f9; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.55; }
+    .wrap { max-width: 900px; margin: 0 auto; padding: 36px 20px 64px; }
+    a.back { color: #38bdf8; text-decoration: none; font-size: 14px; font-weight: 600; }
+    h1 { font-size: clamp(26px, 3.8vw, 38px); color: #fff; margin: 14px 0 12px; line-height: 1.2; }
+    .lead { color: #cbd5e1; font-size: 16px; margin-bottom: 24px; }
+    .calc-card {
+      background: #111b2e; border: 1px solid #243656; border-radius: 16px; padding: 24px; margin-bottom: 22px;
+    }
+    .row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-bottom: 16px; }
+    label { display: block; font-size: 12px; font-weight: 700; color: #94a3b8; margin-bottom: 6px; text-transform: uppercase; }
+    input, select {
+      width: 100%; background: #0a101d; color: #fff; border: 1px solid #334155; border-radius: 9px; padding: 10px 12px; font-size: 15px;
+    }
+    .res-box {
+      background: #0b1526; border: 1px solid #1e3a5f; border-radius: 12px; padding: 18px; margin-top: 14px;
+    }
+    .alert { color: #fda4af; font-weight: 700; margin-top: 8px; }
+    .ok { color: #6ee7b7; font-weight: 700; margin-top: 8px; }
+    .btn {
+      display: inline-block; background: #38bdf8; color: #082f49; font-weight: 800; font-size: 15px;
+      padding: 13px 22px; border-radius: 11px; text-decoration: none; margin-top: 14px;
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← На главную</a>
+  <h1>Экспресс-калькулятор пошлины и утильсбора авто 2026 (Владивосток)</h1>
+  <p class="lead">Мгновенная проверка ставки таможенной пошлины ЕАЭС и права на льготный утильсбор (порог 160 л.с. для ДВС и 80 л.с. для EV/посл. гибридов).</p>
+
+  <div class="calc-card">
+    <div class="row">
+      <div>
+        <label>Возраст авто</label>
+        <select id="age" onchange="calc()">
+          <option value="3_to_5" selected>3–5 лет (Проходной)</option>
+          <option value="under_3">До 3 лет (Новый)</option>
+          <option value="over_5">Старше 5 лет</option>
+        </select>
+      </div>
+      <div>
+        <label>Тип двигателя</label>
+        <select id="eng" onchange="calc()">
+          <option value="petrol" selected>Бензин / Дизель / Паралл. гибрид</option>
+          <option value="ev_series">Электро / Последовательный гибрид</option>
+        </select>
+      </div>
+      <div>
+        <label>Объём двигателя (см³)</label>
+        <input type="number" id="vol" value="1496" oninput="calc()" />
+      </div>
+      <div>
+        <label>Мощность (л.с.)</label>
+        <input type="number" id="hp" value="150" oninput="calc()" />
+      </div>
+    </div>
+
+    <div class="res-box" id="out"></div>
+
+    <a class="btn" href="https://t.me/auto_poshlina_calc_bot?start=seo_calc" target="_blank">🔗 Получить полную смету PNG/PDF по ссылке (Encar / CarSensor / Che168) →</a>
+  </div>
+
+  <div class="calc-card">
+    <h2 style="margin:0 0 10px;color:#fff;font-size:20px;">Зачем автоброкерам и покупателям Telegram-калькулятор?</h2>
+    <p style="margin:0;color:#cbd5e1;font-size:14px;">В полной версии внутри Telegram подтягиваются ежедневные курсы ЦБ РФ (JPY, KRW, CNY, EUR, USD), фрахт, СВХ, СБКТС/ЭПТС и все точные коэффициенты коммерческого утильсбора Постановления № 1713 по каждой ссылке с зарубежных площадок. Для компаний доступен режим <b>White-Label</b> со своим логотипом (первые 3 сметы бесплатно).</p>
+  </div>
+</div>
+<script>
+function calc() {
+  const age = document.getElementById("age").value;
+  const eng = document.getElementById("eng").value;
+  const v = Math.max(0, parseInt(document.getElementById("vol").value || "0", 10));
+  const hp = Math.max(1, parseInt(document.getElementById("hp").value || "1", 10));
+
+  let dutyTxt = "";
+  if (eng === "ev_series") {
+    dutyTxt = "СТП: пошлина 15% + акциз по мощности + НДС 22%";
+  } else if (age === "under_3") {
+    dutyTxt = "До 3 лет: 48%–54% от стоимости (мин. 2.5–20 €/см³)";
+  } else if (age === "3_to_5") {
+    let rate = 3.6;
+    if (v <= 1000) rate = 1.5;
+    else if (v <= 1500) rate = 1.7;
+    else if (v <= 1800) rate = 2.5;
+    else if (v <= 2300) rate = 2.7;
+    else if (v <= 3000) rate = 3.0;
+    dutyTxt = `${Math.round(v * rate).toLocaleString("ru-RU")} € (${rate} €/см³ × ${v} см³)`;
+  } else {
+    let rate = 5.7;
+    if (v <= 1000) rate = 3.0;
+    else if (v <= 1500) rate = 3.2;
+    else if (v <= 1800) rate = 3.5;
+    else if (v <= 2300) rate = 4.8;
+    else if (v <= 3000) rate = 5.0;
+    dutyTxt = `${Math.round(v * rate).toLocaleString("ru-RU")} € (${rate} €/см³ × ${v} см³)`;
+  }
+
+  let pref = true;
+  if (eng === "ev_series" && hp > 80) pref = false;
+  if (eng !== "ev_series" && (hp > 160 || v > 3000)) pref = false;
+  const utilFee = age === "under_3" ? "3 400 ₽" : "5 200 ₽";
+  const utilHtml = pref
+    ? `<div class="ok">✅ Утильсбор (для личного пользования): ЛЬГОТНЫЙ ${utilFee}</div>`
+    : `<div class="alert">⚠️ Утильсбор: КОММЕРЧЕСКИЙ (превышен лимит ${eng === "ev_series" ? "80 л.с." : "160 л.с. / 3000 см³"}) — точный коэффициент в Telegram-боте!</div>`;
+
+  document.getElementById("out").innerHTML = `<div>🛃 <b>Таможенная пошлина ЕАЭС:</b> ${dutyTxt}</div>${utilHtml}`;
+}
+calc();
+</script>
+</body>
+</html>
